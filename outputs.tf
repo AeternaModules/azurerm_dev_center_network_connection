@@ -1,3 +1,7 @@
+output "dev_center_network_connections_id" {
+  description = "Map of id values across all dev_center_network_connections, keyed the same as var.dev_center_network_connections"
+  value       = { for k, v in azurerm_dev_center_network_connection.dev_center_network_connections : k => v.id }
+}
 output "dev_center_network_connections_domain_join_type" {
   description = "Map of domain_join_type values across all dev_center_network_connections, keyed the same as var.dev_center_network_connections"
   value       = { for k, v in azurerm_dev_center_network_connection.dev_center_network_connections : k => v.domain_join_type }
